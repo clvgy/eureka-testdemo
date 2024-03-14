@@ -1,0 +1,10 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-server
+  client:
+    register-with-eureka: false #关闭自己注册自己
+    fetch-registry: false  #关闭 eureka直接从自己身上拉取服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
